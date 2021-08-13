@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/13 13:46:17 by cmero             #+#    #+#             */
-/*   Updated: 2021/08/13 13:46:18 by cmero            ###   ########.fr       */
+/*   Created: 2021/08/13 13:29:34 by cmero             #+#    #+#             */
+/*   Updated: 2021/08/13 13:29:35 by cmero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+int	ft_recursive_power(int nb, int power)
 {
-	if (c >= 'a' && c <= 'z')
-		c -= 32;
-	return (c);
+	if (power < 0)
+		return (0);
+	if (power == 0)
+		return (1);
+	return (nb * ft_recursive_power(nb, power - 1));
 }

@@ -1,20 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstfind_ind_of_max_value.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/13 13:46:17 by cmero             #+#    #+#             */
-/*   Updated: 2021/08/13 13:46:18 by cmero            ###   ########.fr       */
+/*   Created: 2021/08/13 13:50:42 by cmero             #+#    #+#             */
+/*   Updated: 2021/08/13 13:50:43 by cmero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+int	ft_lstfind_ind_of_max_value(t_list *lst)
 {
-	if (c >= 'a' && c <= 'z')
-		c -= 32;
-	return (c);
+	int	max_value;
+	int	max_ind;
+	int	it;
+
+	max_ind = 0;
+	max_value = (int)lst->content;
+	lst = lst->next;
+	it = 1;
+	while (lst)
+	{
+		if ((int)lst->content > max_value)
+		{
+			max_ind = it;
+			max_value = (int)lst->content;
+		}
+		lst = lst->next;
+		it++;
+	}
+	return (max_ind);
 }

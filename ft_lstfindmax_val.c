@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstfindmax_val.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/13 13:46:17 by cmero             #+#    #+#             */
-/*   Updated: 2021/08/13 13:46:18 by cmero            ###   ########.fr       */
+/*   Created: 2021/08/13 13:50:48 by cmero             #+#    #+#             */
+/*   Updated: 2021/08/13 13:50:49 by cmero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+int	ft_lstfindmax_val(t_list *lst)
 {
-	if (c >= 'a' && c <= 'z')
-		c -= 32;
-	return (c);
+	int	max_value;
+
+	max_value = (int)lst->content;
+	while (lst)
+	{
+		if (max_value < (int)lst->content)
+			max_value = (int)lst->content;
+		lst = lst->next;
+	}
+	return (max_value);
 }
