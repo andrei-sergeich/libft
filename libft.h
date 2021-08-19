@@ -6,7 +6,7 @@
 /*   By: cmero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 13:49:03 by cmero             #+#    #+#             */
-/*   Updated: 2021/08/13 13:49:04 by cmero            ###   ########.fr       */
+/*   Updated: 2021/08/19 11:42:05 by cmero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <unistd.h>
 # include <stddef.h>
 # include "limits.h"
+
+# define BUFFER_SIZE 2048
 
 typedef struct s_list
 {
@@ -109,5 +111,6 @@ int		ft_lstfindmax_val(t_list *lst);
 int		ft_lstfindmin_val(t_list *lst);
 int		ft_lstfind_ind_of_max_value(t_list *lst);
 int		ft_lstfind_ind_of_min_value(t_list *lst);
+int		get_next_line(int fd, char **line);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: cmero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 17:55:37 by cmero             #+#    #+#             */
-/*   Updated: 2021/08/13 17:56:46 by cmero            ###   ########.fr       */
+/*   Updated: 2021/08/19 13:06:25 by cmero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,7 @@ int	ft_sqrt(int nb)
 	// {
 	// 	sqrt = racine * racine;
 	// 	if (sqrt == nb)
-	// 	{
 	// 		return (racine);
-	// 	}
 	// 	racine = racine + 1;
 	// }
 	// return (0);
@@ -57,29 +55,29 @@ int	ft_sqrt(int nb)
 	// else
 	// 	return (0);
 
-	// int	i;
+	int	i;
 
-	// i = 0;
-	// if (nb <= 0)
-	// 	return (0);
-	// while (++i < 46341)
-	// 	if (i * i == nb)
-	// 		return (i);
-	// return (0);
+	i = 0;
+	if (nb <= 0)
+		return (0);
+	while (++i < 46341)
+		if (i * i == nb)
+			return (i);
+	return (0);
 
-	int	begin;
-	int	end;
-	int	mid;
+	// int	begin;
+	// int	end;
+	// int	mid;
 
-	begin = 0;
-	end = ft_find_max(1, nb);
-	while (end - begin > 1)
-	{
-		mid = begin + (end - begin) / 2;
-		if (nb > mid * mid)
-			begin = mid;
-		else
-			end = mid;
-	}
-	return (mid);
+	// begin = 0;
+	// end = ft_find_max(1, nb);
+	// while (end - begin > 1)
+	// {
+	// 	mid = begin + (end - begin) / 2;
+	// 	if (nb > mid * mid)
+	// 		begin = mid;
+	// 	else
+	// 		end = mid;
+	// }
+	// return (mid);
 }
